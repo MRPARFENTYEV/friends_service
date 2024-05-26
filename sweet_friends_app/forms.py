@@ -17,6 +17,7 @@ class UserRegistrationForm(forms.Form):
         )
     )
 
+
 class UserLoginForm(forms.Form):
     email = forms.EmailField(
         widget=forms.EmailInput(
@@ -28,3 +29,10 @@ class UserLoginForm(forms.Form):
             attrs={'class': 'form-control', 'placeholder': 'пароль'}
         )
     )
+
+class EditProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['full_name', 'email','image']
+        widgets = {'full_name': forms.TextInput(attrs={'placeholder':'Фамилия, имя, отечество'},),
+                   'email': forms.EmailInput(attrs={'placeholder':'Пример: User@mail.ru'})}

@@ -4,39 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0609b2b-a029-4a6b-9cdf-99e752e48946" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/friends_service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/migrations/0002_friends.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/potential_friends.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_service/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_service/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_service/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_service/wsgi.py" afterDir="false" />
+    <list default="true" id="e0609b2b-a029-4a6b-9cdf-99e752e48946" name="Changes" comment="original commit">
+      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/edit_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/friend_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/migrations/0002_friends.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_service/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_service/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,29 +33,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2gshPfnsOpKpGslJubxoEJzeSOD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/mrpar/friends_service/sweet_friends_app/templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mrpar/friends_service/sweet_friends_app/templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mrpar\friends_service\sweet_friends_app\templates" />
       <recent name="C:\Users\mrpar\friends_service\sweet_friends_app" />
       <recent name="C:\Users\mrpar\friends_service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mrpar\friends_service\media" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -94,17 +80,19 @@
       <option name="presentableId" value="Default" />
       <updated>1716492169324</updated>
     </task>
+    <task id="LOCAL-00001" summary="original commit">
+      <option name="closed" value="true" />
+      <created>1716525157196</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716525157197</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/sweet_friends_service/settings.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="original commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="original commit" />
   </component>
 </project>

@@ -20,6 +20,7 @@ class User(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_manager = models.BooleanField(default=False)
+    image = models.ImageField(upload_to='users')
 
     objects = UserManager()
 
@@ -38,7 +39,17 @@ class User(AbstractBaseUser):
         return friends_id
 
     def get_absolute_url(self):
-        return reverse('sweet_friends:friend_detail', kwargs={'user_id': self.id})
+        return reverse('sweet_friends_app:friend_detail', kwargs={'user_id': self.id})
+    def has_perm(self, perm, obj=None):
+        return True
+
+    def has_module_perms(self, app_label):
+        return True
+
+    @property
+    def is_staff(self):
+        return self.is_admin
+
 
 class Friends(models.Model):
 

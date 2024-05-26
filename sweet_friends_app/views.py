@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import authenticate, login, logout
-from sweet_friends_app.forms import UserRegistrationForm, UserLoginForm
+from sweet_friends_app.forms import UserRegistrationForm, UserLoginForm, EditProfileForm
 from sweet_friends_app.models import Friends, User
 
 def paginat(request, list_objects):  # https://docs.djangoproject.com/en/5.0/topics/pagination/
@@ -58,7 +58,15 @@ def user_login(request):
 def home_page(request):
     user = User.objects.get(id=request.user.id)
     user_name = user.full_name
-    return render(request, 'home.html', context={'user': paginat(request, return_friends_list(user)),'user_name':user_name})
+
+    fr = return_friends_list(user)
+
+    for frie in fr:
+        print('Image',type(frie.image))
+
+    return render(request, 'home.html', context={'user': paginat(request, return_friends_list(user)),
+                                                 'user_name':user_name,
+                                                 })
 def user_register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -91,3 +99,31 @@ def potential_friends(request):
 
     context = {'potential_friends': potencial_friends_list}
     return render(request, 'potential_friends.html', context)
+
+
+
+def friend_detail(request, user_id):
+
+    friend = get_object_or_404(User, id=user_id)
+    print(friend)
+
+    context = {
+        'user': friend,
+        'full_name': friend.full_name,
+        'friends': paginat(request, return_friends_list(friend)),
+    }
+
+    return render(request, 'friend_detail.html', context)
+
+def edit_profile(request):
+
+    form = EditProfileForm(request.POST, instance=request.user)
+    print(form)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Ваш профиль был изменен', 'success')
+        return redirect('sweet_friends_app:edit_profile')
+    else:
+        form = EditProfileForm(instance=request.user)
+    context = {'title':'Edit Profile', 'form':form}
+    return render(request, 'edit_profile.html', context)
