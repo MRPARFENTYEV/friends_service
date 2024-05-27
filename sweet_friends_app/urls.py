@@ -13,7 +13,8 @@ urlpatterns = [
     path('', views.home_page, name='home_page'),
     path('potential_friends/', views.potential_friends, name='potential_friends'),
     path('<int:user_id>', views.friend_detail, name='friend_detail'),
-    path('edit_profile/', views.edit_profile, name='edit_profile'),]
-    # path('add_friend/<int:friend_id>/', views.add_friend, name='add_friend')]
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+    path('add_friend/<int:friend_id>/', views.add_friend, name='add_friend'),
+    path('remove_friend/<int:friend_id>', views.remove_friend, name='remove_friend')]
 
 

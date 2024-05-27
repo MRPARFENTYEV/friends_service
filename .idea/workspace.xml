@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0609b2b-a029-4a6b-9cdf-99e752e48946" name="Changes" comment="original commit">
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/edit_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sweet_friends_app/templates/friend_detail.html" afterDir="false" />
+    <list default="true" id="e0609b2b-a029-4a6b-9cdf-99e752e48946" name="Changes" comment="resolved problem of crashed pictures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sweet_friends_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sweet_friends_app/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sweet_friends_app/migrations/0002_friends.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sweet_friends_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sweet_friends_app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweet_friends_app/templates/friend_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/templates/friend_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sweet_friends_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sweet_friends_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sweet_friends_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_service/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sweet_friends_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sweet_friends_service/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +81,20 @@
       <option name="project" value="LOCAL" />
       <updated>1716525157197</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="resolved problem of crashed pictures">
+      <option name="closed" value="true" />
+      <created>1716695850579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716695850579</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="original commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="original commit" />
+    <MESSAGE value="resolved problem of crashed pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolved problem of crashed pictures" />
   </component>
 </project>

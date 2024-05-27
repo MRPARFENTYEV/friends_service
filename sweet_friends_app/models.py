@@ -69,5 +69,8 @@ class Friends(models.Model):
 
                     info.append({'friend_info':obj})
         return info
+    # def update(self):
+    #     self.status= True
+    #     return self.status
     def get_absolute_url(self):
         return reverse('sweet_friends:friend_detail', kwargs={'user_id': self.friend_id})

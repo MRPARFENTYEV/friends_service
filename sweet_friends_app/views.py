@@ -35,7 +35,7 @@ def user_login(request):
         form = UserLoginForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            print(data)
+
             user = authenticate(
                 request, email=data['email'], password=data['password']
             )
@@ -86,10 +86,9 @@ def user_register(request):
 def user_logout(request):
     logout(request)
     return redirect('sweet_friends_app:user_login')
-
+@login_required
 def potential_friends(request):
-    user = request.user
-    print(User.return_friends(user))
+    user = request.use
     objects = User.objects.all()
     potencial_friends_list =[]
     for potential_friend in objects:
@@ -101,16 +100,18 @@ def potential_friends(request):
     return render(request, 'potential_friends.html', context)
 
 
-
+@login_required
 def friend_detail(request, user_id):
-
     friend = get_object_or_404(User, id=user_id)
-    print(friend)
+    is_friend = str(user_id) in request.user.return_friends()
+    print(str(user_id) in request.user.return_friends())
 
     context = {
+        'return_friends': is_friend,
         'user': friend,
         'full_name': friend.full_name,
         'friends': paginat(request, return_friends_list(friend)),
+
     }
 
     return render(request, 'friend_detail.html', context)
@@ -118,7 +119,6 @@ def friend_detail(request, user_id):
 def edit_profile(request):
 
     form = EditProfileForm(request.POST, instance=request.user)
-    print(form)
     if form.is_valid():
         form.save()
         messages.success(request, 'Ваш профиль был изменен', 'success')
@@ -127,3 +127,22 @@ def edit_profile(request):
         form = EditProfileForm(instance=request.user)
     context = {'title':'Edit Profile', 'form':form}
     return render(request, 'edit_profile.html', context)
+
+@login_required
+def add_friend(request, friend_id):
+    friend = User.objects.get(id=friend_id)
+    if str(request.user.id) not in User.return_friends(friend): # если я не в его друзьях то:
+        Friends.objects.create(user_id=request.user, friend_id=friend_id)
+    else:
+        recording = Friends.objects.get(friend_id= str(request.user.id), user_id=friend.id)
+        recording.status = True
+        recording.save()
+        Friends.objects.create(user_id=request.user, friend_id=friend_id, status=True)
+
+    return friend_detail(request, friend_id)
+
+
+def remove_friend(request,friend_id):
+    friend = Friends.objects.get(friend_id=friend_id)
+    friend.delete()
+    return friend_detail(request, friend_id)
