@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from sweet_friends_app.forms import UserRegistrationForm, UserLoginForm, EditProfileForm
 from sweet_friends_app.models import Friends, User
 
-def paginat(request, list_objects):  # https://docs.djangoproject.com/en/5.0/topics/pagination/
+def paginat(request, list_objects:list):  # https://docs.djangoproject.com/en/5.0/topics/pagination/
 
     p = Paginator(list_objects, 2)
     page_number = request.GET.get('page')
@@ -20,7 +20,7 @@ def paginat(request, list_objects):  # https://docs.djangoproject.com/en/5.0/top
         page_obj = p.page(p.num_pages)
     return page_obj
 
-def return_friends_list(user):
+def return_friends_list(user:User)->list:
     friends_id = User.return_friends(user) # v
 
     listus =[]
@@ -58,12 +58,7 @@ def user_login(request):
 def home_page(request):
     user = User.objects.get(id=request.user.id)
     user_name = user.full_name
-
-    fr = return_friends_list(user)
-
-    for frie in fr:
-        print('Image',type(frie.image))
-
+    print(return_friends_list(user))
     return render(request, 'home.html', context={'user': paginat(request, return_friends_list(user)),
                                                  'user_name':user_name,
                                                  })
@@ -88,7 +83,7 @@ def user_logout(request):
     return redirect('sweet_friends_app:user_login')
 @login_required
 def potential_friends(request):
-    user = request.use
+    user = request.user
     objects = User.objects.all()
     potencial_friends_list =[]
     for potential_friend in objects:
@@ -101,7 +96,7 @@ def potential_friends(request):
 
 
 @login_required
-def friend_detail(request, user_id):
+def friend_detail(request, user_id:User):
     friend = get_object_or_404(User, id=user_id)
     is_friend = str(user_id) in request.user.return_friends()
     print(str(user_id) in request.user.return_friends())
@@ -129,7 +124,7 @@ def edit_profile(request):
     return render(request, 'edit_profile.html', context)
 
 @login_required
-def add_friend(request, friend_id):
+def add_friend(request, friend_id:int):
     friend = User.objects.get(id=friend_id)
     if str(request.user.id) not in User.return_friends(friend): # если я не в его друзьях то:
         Friends.objects.create(user_id=request.user, friend_id=friend_id)
@@ -142,7 +137,7 @@ def add_friend(request, friend_id):
     return friend_detail(request, friend_id)
 
 
-def remove_friend(request,friend_id):
+def remove_friend(request,friend_id:int):
     friend = Friends.objects.get(friend_id=friend_id)
     friend.delete()
     return friend_detail(request, friend_id)
