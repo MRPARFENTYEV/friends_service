@@ -56,12 +56,16 @@ def user_login(request):
 
 
 def home_page(request):
-    user = User.objects.get(id=request.user.id)
-    user_name = user.full_name
-    print(return_friends_list(user))
-    return render(request, 'home.html', context={'user': paginat(request, return_friends_list(user)),
-                                                 'user_name':user_name,
-                                                 })
+    print(type(request.user))
+    if str(request.user) == 'AnonymousUser':
+        return redirect('sweet_friends_app:user_login')
+    else:
+        user = User.objects.get(id=request.user.id)
+        user_name = user.full_name
+        return render(request, 'home.html', context={'user': paginat(request, return_friends_list(user)),
+                                                     'user_name':user_name,
+                                                     })
+
 def user_register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -141,3 +145,15 @@ def remove_friend(request,friend_id:int):
     friend = Friends.objects.get(friend_id=friend_id)
     friend.delete()
     return friend_detail(request, friend_id)
+
+def search(request):
+    query = request.GET.get('q')
+    searched_user = User.objects.filter(full_name__icontains=query).all()
+    context = {'user':paginat(request,searched_user)}
+    return render(request,'home.html', context)
+
+
+
+
+
+

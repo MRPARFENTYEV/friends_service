@@ -18,9 +18,13 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <i class="material-icons h3" style="color: red;">&#xe87d;</i>
           <li><a  href="{% url 'sweet_friends_app:home_page' %}" class="nav-link px-2 text-dark">Сладкие друзья</a></li>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="{% url 'sweet_friends_app:search' %}">
+            <input name="q" type="search" class="form-control form-control-dark" placeholder="Поиск..." aria-label="Search">
+            </form>
             <div class="dropdown text-end">
             <a href="#" class="btn btn-primary text-white me-4 d-block link-dark text-decoration-none dropdown-toggle"id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">Профиль</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="{% url 'sweet_friends_app:potential_friends' %}">Посмотреть возможных друзей</a></li>
                 <li><a class="dropdown-item text-danger" href="{% url 'sweet_friends_app:user_logout' %}">Выйти</a></li>
 
             </ul>
